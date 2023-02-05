@@ -1,0 +1,18 @@
+#Getting machine name using uname
+UNAME := $(shell uname)
+current_dir = $(shell pwd)
+#MACHINE_DEPENDENT_FLAGS = -L/opt/intel/mkl/lib/intel64 -isystem $(BFPATH)/libconfig/include/ -isystem $(BFPATH)/armadillo/usr/local/include/ -I$(BFPATH)/SOURCE/ -L$(BFPATH)/armadillo/usr/local/lib64 -larmadillo -L$(BFPATH)/libconfig/lib -lconfig++ -rdynamic
+MACHINE_DEPENDENT_FLAGS = -isystem $(BFPATH)/libconfig/include/ -L/software/CentOS-6/libraries/GotoBLAS_LAPACK/shared -lblas -llapack -isystem $(BFPATH)/armadillo-7.800.0/include -DARMA_DONT_USE_WRAPPER -I$(BFPATH)/SOURCE -L$(BFPATH)/libconfig/lib -lconfig++ -rdynamic
+
+MACHINE_DEPENDENT_FLAGS_LIB  = -fPIC -shared
+
+
+
+
+CXX				= mpic++
+FLAGS 			= -Wall -std=c++11 -O2 -L $(BFPATH)/lib/ -l bf  $(MACHINE_DEPENDENT_FLAGS)
+
+main:
+	$(CXX) example1.cpp $(FLAGS) -o ex1.out
+clean:
+	rm -rf *.out *.txt

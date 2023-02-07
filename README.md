@@ -1,5 +1,7 @@
 # README #
 
+Currently revamping my research code into something that's a bit more usable!
+
 ## Guillimin usage ##
 
 To use on Guillimin, you will need to load the following modules

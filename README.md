@@ -1,6 +1,7 @@
 # README #
 
-Currently revamping my research code into something that's a bit more usable!
+Currently revamping my research code into something that's a bit more usable! This code will be unstable for a while until I clean the code and refactor some parts. I will also improve the documentation.
+
 
 ## Guillimin usage ##
 
